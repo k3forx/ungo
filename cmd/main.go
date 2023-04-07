@@ -8,8 +8,7 @@ import (
 )
 
 func main() {
-	app := ungo.NewApp()
-	if err := app.Run(os.Args); err != nil {
+	if err := ungo.NewApp().Run(os.Args); err != nil {
 		log.Fatal(err)
 	}
 }
