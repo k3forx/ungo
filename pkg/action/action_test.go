@@ -32,9 +32,9 @@ func TestAction(t *testing.T) {
 				},
 			}
 
-			err := app.Run([]string{"", "cmd"})
+			err := app.Run(c.args)
 			if c.isErr && err == nil {
-
+				t.Errorf("should be err, but got nil")
 			}
 		})
 	}
