@@ -18,13 +18,13 @@ func NewApp() *cli.App {
 	)
 	return &cli.App{
 		Name:  "ungo",
-		Usage: "ungo adds emoji of shit at suffix",
+		Usage: "ungo adds 💩 at suffix of some text",
 		Flags: []cli.Flag{
 			&cli.IntFlag{
 				Name:        "count",
 				Aliases:     []string{"cnt", "c"},
 				Value:       1,
-				Usage:       "specify the number of emoji",
+				Usage:       "the number of 💩",
 				Destination: &emojiCount,
 			},
 		},
@@ -34,8 +34,7 @@ func NewApp() *cli.App {
 			}
 
 			text := cCtx.Args().First()
-			emoji := strings.Repeat(defaultEmoji, emojiCount)
-			fmt.Printf("%s%v\n", text, emoji)
+			fmt.Printf("%s%s\n", text, strings.Repeat(defaultEmoji, emojiCount))
 			return nil
 		},
 	}
